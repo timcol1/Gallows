@@ -4,7 +4,7 @@ public class Player {
     private int life;
 
     public Player() {
-        this.life = 0;
+        this.life = 5;
     }
 
     public int getLife() {
@@ -13,5 +13,9 @@ public class Player {
 
     public void setLife(int life) {
         this.life = life;
+    }
+
+    public void decreaseLife() {
+        --life;
     }
 }

@@ -1,9 +1,11 @@
 package avlyakulov.timur;
 
-public class GameState {
-    int life;
+import java.util.Arrays;
+import java.util.List;
 
-    public void gallowsState() {
+public class GameState {
+
+    private void gallowsState(int life) {
         switch (life) {
             case 5 -> {
                 System.out.println("\t----|");
@@ -66,5 +68,26 @@ public class GameState {
                 System.out.println("\t-------");
             }
         }
+    }
+
+    public void printGameState(int life, char[] encodedWord, List<Character> usedWords) {
+        gallowsState(life);
+        System.out.print("The word you need to guess ");
+        printEncodedWord(encodedWord);
+        printUsedWords(usedWords);
+    }
+
+    private void printEncodedWord(char[] encodedWord) {
+        for (char c : encodedWord) {
+            System.out.print(c + " ");
+        }
+        System.out.println();
+    }
+
+    private void printUsedWords(List<Character> usedWords) {
+        System.out.print("Used words ");
+        for (char c : usedWords)
+            System.out.print(c + ", ");
+        System.out.println();
     }
 }
